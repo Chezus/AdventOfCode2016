@@ -17,7 +17,7 @@ foreach($data as $code) {
     $values = array_count_values(str_split($codeString));
     array_multisort($values, SORT_DESC, array_keys($values), SORT_ASC);
     $implodedStr = implode("", array_keys($values));
-    $pattern = "/[^" . preg_quote($checksum) . "]+/";
+    $pattern = "/[^" . $checksum . "]+/";
     $implodedStr = preg_replace($pattern, "", $implodedStr);
 
     if($implodedStr === $checksum) {
